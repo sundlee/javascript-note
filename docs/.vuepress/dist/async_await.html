@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Async/Await | JavaScript - 주요 개념</title>
+    <meta name="description" content="Javascript중 헷갈리는 내용을 설명하기 위해서 만든 노트입니다.">
+    <link rel="icon" href="/javascript-note/logo.png">
+    
+    <link rel="preload" href="/javascript-note/assets/css/0.styles.7f3cc0c0.css" as="style"><link rel="preload" href="/javascript-note/assets/js/app.cbd95ad2.js" as="script"><link rel="preload" href="/javascript-note/assets/js/2.fad96d53.js" as="script"><link rel="preload" href="/javascript-note/assets/js/6.def2dbab.js" as="script"><link rel="prefetch" href="/javascript-note/assets/js/3.50b202e3.js"><link rel="prefetch" href="/javascript-note/assets/js/4.72cc101f.js"><link rel="prefetch" href="/javascript-note/assets/js/5.dd043ff6.js"><link rel="prefetch" href="/javascript-note/assets/js/7.fe9d0e1f.js"><link rel="prefetch" href="/javascript-note/assets/js/8.ca50e6e6.js"><link rel="prefetch" href="/javascript-note/assets/js/9.39b28a68.js">
+    <link rel="stylesheet" href="/javascript-note/assets/css/0.styles.7f3cc0c0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/javascript-note/" class="home-link router-link-active"><!----> <span class="site-name">JavaScript - 주요 개념</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Immutability</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/javascript-note/immutability.html" class="sidebar-link">불변성</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Promise</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/javascript-note/promise.html" class="sidebar-link">Promise</a></li><li><a href="/javascript-note/async_await.html" class="active sidebar-link">Async/Await</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/javascript-note/async_await.html#props-속성-코드-형식" class="sidebar-link">props 속성 코드 형식</a></li><li class="sidebar-sub-header"><a href="/javascript-note/async_await.html#props-속성-코드-예시" class="sidebar-link">props 속성 코드 예시</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="props-속성"><a href="#props-속성" aria-hidden="true" class="header-anchor">#</a> props 속성</h1> <p>프롭스 속성은 컴포넌트 간에 데이터를 전달할 수 있는 컴포넌트 통신 방법입니다. 프롭스 속성을 기억할 때는 상위 컴포넌트에서 하위 컴포넌트로 내려보내는 데이터 속성으로 기억하면 쉽습니다.</p> <h2 id="props-속성-코드-형식"><a href="#props-속성-코드-형식" aria-hidden="true" class="header-anchor">#</a> props 속성 코드 형식</h2> <p>props 속성을 사용하기 위해서는 하위 컴포넌트의 컴포넌트 내용과 상위 컴포넌트의 템플릿에 각각 코드를 추가해줘야 합니다.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 하위 컴포넌트의 내용</span>
+<span class="token keyword">var</span> childComponent <span class="token operator">=</span> <span class="token punctuation">{</span>
+  props<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'프롭스 속성 명'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-html extra-class"><pre class="language-html"><code><span class="token comment">&lt;!-- 상위 컴포넌트의 템플릿 --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child-component</span> <span class="token attr-name"><span class="token namespace">v-bind:</span>프롭스</span> <span class="token attr-name">속성</span> <span class="token attr-name">명</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>상위 컴포넌트의 data 속성<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child-component</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="props-속성-코드-예시"><a href="#props-속성-코드-예시" aria-hidden="true" class="header-anchor">#</a> props 속성 코드 예시</h2> <p>그럼 위의 코드 형식을 참고하여 실제 프롭스 속성을 구현한 코드를 보겠습니다.</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br></div><pre class="language-js"><code><span class="token comment">// 하위 컴포넌트 : childComponent</span>
+<span class="token keyword">var</span> childComponent <span class="token operator">=</span> <span class="token punctuation">{</span>
+  props<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'propsdata'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  template<span class="token punctuation">:</span> <span class="token string">'&lt;p&gt;{{ propsdata }}&lt;/p&gt;'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 상위 컴포넌트 : root 컴포넌트</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'child-component'</span><span class="token punctuation">:</span> childComponent
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    message<span class="token punctuation">:</span> <span class="token string">'hello vue.js'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-html extra-class"><div class="highlight-lines"><br><div class="highlighted"> </div><br><br><br></div><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>child-component</span> <span class="token attr-name"><span class="token namespace">v-bind:</span>propsdata</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>message<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>child-component</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- 위의 출력 결과는 hello vue.js --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/javascript-note/promise.html" class="prev">Promise</a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/javascript-note/assets/js/app.cbd95ad2.js" defer></script><script src="/javascript-note/assets/js/2.fad96d53.js" defer></script><script src="/javascript-note/assets/js/6.def2dbab.js" defer></script>
+  </body>
+</html>
