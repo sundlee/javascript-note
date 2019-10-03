@@ -10,6 +10,6 @@ git init
 git add -A
 git commit -m 'deploy with vuepress'
 
-git push -f http://git.korea.ncsoft.corp/scm/~sundlee/javascript-note.git master:gh-pages
+git push -f https://github.com/sundlee/javascript-note.git master:gh-pages
 
 cd -
