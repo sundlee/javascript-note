@@ -2,54 +2,61 @@
 title: Async/Await
 ---
 
-# props 속성
-
-프롭스 속성은 컴포넌트 간에 데이터를 전달할 수 있는 컴포넌트 통신 방법입니다. 프롭스 속성을 기억할 때는 상위 컴포넌트에서 하위 컴포넌트로 내려보내는 데이터 속성으로 기억하면 쉽습니다.
-
-## props 속성 코드 형식
-
-props 속성을 사용하기 위해서는 하위 컴포넌트의 컴포넌트 내용과 상위 컴포넌트의 템플릿에 각각 코드를 추가해줘야 합니다.
+# 예제
 
 ```js
-// 하위 컴포넌트의 내용
-var childComponent = {
-  props: ['프롭스 속성 명']
+function requestData(value){
+    return new Promise(resolve => 
+        setTimeout(() => {
+            console.log('requestData:', value);
+            resolve(value);
+        }, 100),
+    );
 }
+async function getData() {
+    const data1 = await requestData(10);
+    const data2 = await requestData(20);
+    console.log(data1, data2);
+    return [data1. data2];
+}
+getData();
+// requestData : 10
+// requestData : 20
+// 10 20
 ```
 
-```html
-<!-- 상위 컴포넌트의 템플릿 -->
-<div id="app">
-  <child-component v-bind:프롭스 속성 명="상위 컴포넌트의 data 속성"></child-component>
-</div>
-```
 
-## props 속성 코드 예시
+# 가독성이 높음
 
-그럼 위의 코드 형식을 참고하여 실제 프롭스 속성을 구현한 코드를 보겠습니다.
-
-```js {3,14}
-// 하위 컴포넌트 : childComponent
-var childComponent = {
-  props: ['propsdata'],
-  template: '<p>{{ propsdata }}</p>'
+```js
+// Promise로 작성한 코드
+function getDataPromise(){
+    asyncFunc1()
+    .then(data => {
+        console.log(data);
+        return asyncFunc1(data);
+    })
+    .then(data => {
+        console.log(data);
+        return asyncFunc1(data);
+    })
+    .then(data => {
+        console.log(data);
+    })
 }
 
-// 상위 컴포넌트 : root 컴포넌트
-new Vue({
-  el: '#app',
-  components: {
-    'child-component': childComponent
-  },
-  data: {
-    message: 'hello vue.js'
-  }
-})
+// async await로 작성한 코드
+async function getDataAsync(){
+    const data1 = await asyncFunc1();
+    console.log(data1);
+    const data2 = await asyncFunc1(data1);
+    console.log(data2);
+    const data3 = await asyncFunc1(data2);
+    console.log(data3);
+}
+
+getDataPromise();
+getDataAsync();
 ```
 
-```html {2}
-<div id="app">
-  <child-component v-bind:propsdata="message"></child-component>
-  <!-- 위의 출력 결과는 hello vue.js -->
-</div>
-```
+
