@@ -208,7 +208,10 @@ console.log(o1, o2);
 ```
 
 
-## call by reference
+::: tip
+## call by reference vs. call by value
+
+call by reference
 
 ```js
 function mutate(obj) {
@@ -220,7 +223,7 @@ mutate(obj)
 console.log(obj.a); // prints true
 ```
 
-## call by value
+call by value
 
 ```js
 function mutate(str) {
@@ -231,7 +234,7 @@ const str = 'hello';
 mutate(str)
 console.log(str); // hello 
 ```
-
+:::
 
 
 ## 참조
