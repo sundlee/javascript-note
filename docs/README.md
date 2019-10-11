@@ -1,7 +1,7 @@
 # Javascript에서 헷갈리는 것들을 확실하게
 
 
-* [Immutability](/immutability.html)
+* [Immutable](/immutable.html)
 * [비교](/comparison.html)
 * [Promise](/promise.html)
 * [Async/Await](/async_await.html)

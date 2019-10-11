@@ -14,14 +14,22 @@ module.exports = {
         title: 'Data Type의 특성',
         collapsable: false,
         children: [
-          '/immutability',
+          '/immutable',
           '/comparison'
+        ]
+      },
+      {
+        title: 'First',
+        collapsable: false,
+        children: [
+          '/first_class',
         ]
       },
       {
         title: 'Promise',
         collapsable: false,
         children: [
+          '/sync_async',
           '/promise',
           '/async_await'
         ]
