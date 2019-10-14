@@ -5,7 +5,7 @@ module.exports = {
   head: [
     ['link', {
       rel: 'icon',
-      href: '/logo.png'
+      href: '/js-logo.png'
     }]
   ],
   themeConfig: {
