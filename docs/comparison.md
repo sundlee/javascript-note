@@ -82,7 +82,7 @@ console.log(str3 == obj); // true obj.toString의 결과 값으로 비교합니�
 console.log(str3 === obj); // false
 ```
 
-## Aut-boxing
+## Auto-boxing
 
 다음의 실행 결과를 예측해보세요.
 
@@ -129,7 +129,7 @@ foo라는 프로퍼티를 set하려고 할때 Auto-Boxing에 의해 임시로 St
 
 
 ::: tip
-TIP: Boxing과 Unboxing)
+TIP: boxing/unboxing
 * 기본자료형을 래퍼클래스로 변경하는 것을 박싱, 그 반대를 언박싱이라고 함
 * 자동으로 처리하는 것을 오토박싱(AutoBoxing), 오토언박싱(AutoUnBoxing)이라고 함
 :::
