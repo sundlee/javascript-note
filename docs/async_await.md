@@ -4,7 +4,7 @@ title: Async/Await
 
 # Async/Await
 
-Promise를 사용하면 코드가 then chaining 으로 인해서 가독성이 안 좋습니다. 
+Promise를 사용하면 코드가 then chaining 으로 인해서 가독성이 좋지 않습니다. 
 
 
 ::: tip
@@ -19,6 +19,7 @@ func1();
 ```
 :::
 
+## 예제1
 
 ```js
 function requestData(value){
@@ -42,11 +43,11 @@ getData();
 ```
 
 
-# 장점
+# Async/Await의 장점
 
 async/await는 Promise보다 가독성이 높습니다.
 
-## Promise와 Async/Await 비교
+## Promise와 Async/Await
 ```js
 // Promise로 작성한 코드
 function getDataPromise(){
@@ -79,7 +80,7 @@ getDataAsync();
 ```
 
 
-## jsonplaceholder에서 값을 읽어와 처리하는 예제
+## 예제2
 
 ```js
 const fetch = require("node-fetch");
