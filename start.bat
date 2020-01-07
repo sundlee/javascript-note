@@ -1,1 +1,1 @@
-npm run doc
+CMD /C npm run doc

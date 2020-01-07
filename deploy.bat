@@ -11,3 +11,5 @@ git add -A
 git commit -m "deploy with vuepress"
 
 git push -f https://github.com/sundlee/javascript-note.git master:gh-pages
+
+cd ..\..\..

@@ -20,7 +20,8 @@ func1();
 :::
 
 ## 예제1
-
+----
+asyncawait1.js
 ```js
 function requestData(value){
     return new Promise(resolve => 
@@ -48,6 +49,7 @@ getData();
 async/await는 Promise보다 가독성이 높습니다.
 
 ## Promise와 Async/Await
+Promise와 Async/Await를 각각 사용한 예의 비교
 ```js
 // Promise로 작성한 코드
 function getDataPromise(){
@@ -81,7 +83,8 @@ getDataAsync();
 
 
 ## 예제2
-
+----
+asyncawait2.js
 ```js
 const fetch = require("node-fetch");
 
@@ -117,7 +120,8 @@ logTodoTitle();
 # error handling
 
 보통 error handling을 위해서 try ~ catch문을 함께 사용합니다.
-
+----
+asyncawait-try.js
 ```js
 const fetch = require("node-fetch");
 
@@ -132,9 +136,10 @@ async function logTodoTitle() {
   try {
     var user = await fetchUser();
     console.log(`user: ${JSON.stringify(user, null, 2)}`);
+    return Promise.resolve(user);
   } catch (e) {
     console.error(e);
-    return e;
+    return Promise.reject(e);
   }
 }
 

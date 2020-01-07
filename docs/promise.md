@@ -4,21 +4,23 @@ title: Promise
 
 # Promise
 
-## callback 1
-
+## Callback example
+----
+none-promise.js
 ```js
-function first(a,b,callback){
-	let v=a*b;
+function first(a, b, callback){
+	let v = a * b;
 	callback(v);
 }
 
-first(1,2,function(v){
+first(1, 2, function(v) {
 	console.log(v);		//2
 })
 ```
 
-## callback 2
-
+## Promise example
+----
+promise.js
 ```js
 function delay(sec, callback) {
   setTimeout(() => {

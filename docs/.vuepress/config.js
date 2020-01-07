@@ -20,6 +20,13 @@ module.exports = {
         ]
       },
       {
+        title: 'Array조작',
+        collapsable: false,
+        children: [
+          '/array',
+        ]
+      },
+      {
         title: 'First',
         collapsable: false,
         children: [
